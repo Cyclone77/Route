@@ -46,11 +46,7 @@ require(["jquery", "bootstrap", "Route"], function ($, _, Route) {
             }
         }],
         onregistered: function (that) {
-            $(that.eventdom).closest("li").addClass("active");
+            $(that.eventdom).closest("li").addClass("active").siblings("li").removeClass("active");
         }
-    });
-
-    $(".nav.navbar-nav li").on("click", function () {
-        $(this).addClass("active").siblings("li").removeClass("active");
     });
 });
