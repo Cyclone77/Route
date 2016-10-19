@@ -26,3 +26,29 @@
 - 利用History或者Hash无刷新改变URL
 
 ## 补充
+
+## 用法
+
+``` javascript
+Route({
+    same: true,  //相同hash值是否重新加载，刷新
+    animationClass: "fadeInUp", //路由动画
+    applyDom: $("#divSection")[0], //路由渲染Dom
+    routeArray: [{
+        eventdom: $(".nav.navbar-nav [mark='index']")[0], //触发路由Dom
+        ajaxget: true, //是否通过ajax渲染
+        ajaxApplyUrl: "tpl/index.html", //通过ajax渲染源
+        urlHash: "#!index", //路由hash值
+        pageTitle: "主页", //路由后页面标题
+        defaultRoute: true, //是否设为默认路由
+        applycallback: function (that) {   //当前路由触发结束             
+            //require(["page1"], function (page1) {
+            //    //alert(sdfx);
+            //});
+        }
+    }],
+    onregistered: function (that) {
+    	//路由注册结束，在当前路由触发结束事件前执行
+    }
+})
+```
